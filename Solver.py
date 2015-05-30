@@ -45,7 +45,7 @@ class FieldEnquationSolver:
         i = 1
         t = 0
         while (not found) and (i < self.q):
-            if self.lejandrs_sign((i**2 - 4*a) % self.q, self.q) == -1:
+            if self.yacobi_sign((i**2 - 4*a) % self.q, self.q) == -1:
                 found = True
                 t = i
             i += 1
@@ -68,7 +68,7 @@ class FieldEnquationSolver:
                 degree /= 2
         return res.b
 
-    def lejandrs_sign(self, a, p):
+    def yacobi_sign(self, a, p):
         b = 0
         lejandr = 1
         while p != 1:
